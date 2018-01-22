@@ -1,4 +1,6 @@
 from keras.datasets import mnist
+import numpy as np
+from keras.utils import np_utils
 
 def get_data(nb_classes = 10):
 	(X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -19,4 +21,4 @@ def get_data(nb_classes = 10):
 	Y_train = np_utils.to_categorical(y_train, nb_classes)
 	Y_test = np_utils.to_categorical(y_test, nb_classes)
 
-	return (X_train, y_train, X_test, y_test)
+	return (X_train, Y_train, X_test, Y_test)
